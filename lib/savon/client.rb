@@ -92,7 +92,7 @@ module Savon
       super unless @wsdl.respond_to? soap_action
 
       setup_objects *@wsdl.operation_from(soap_action), &block
-      Response.new @request.soap(@soap)
+      @request.soap(@soap)
     end
 
     # Sets whether to use Savon::WSDL by a given +method+ name and returns the original method name
